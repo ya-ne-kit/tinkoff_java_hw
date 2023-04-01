@@ -5,20 +5,22 @@ import java.util.regex.Pattern;
 
 public class GitHubParser extends Parser {
 
+
+    private final String REGEX = "https?://github\\.com/(.*)/(.*)";
+
     public GitHubParser(Parser next) {
         super(next);
     }
 
     @Override
     public String[] doParse(String URL) {
-        String regex="https?://github\\.com/(.*)/(.*)";
-        Pattern pattern = Pattern.compile(regex);
+        Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher = pattern.matcher(URL);
         if (matcher.matches()) {
-            return new String[] {URL.split("/")[3], URL.split("/")[4]};
-        } else if (next == null) {
+            return new String[]{URL.split("/")[3], URL.split("/")[4]};
+        } else if (getNext() == null) {
             return null;
         }
-        return this.getNext().doParse(URL);
+        return getNext().doParse(URL);
     }
 }

@@ -2,25 +2,28 @@ package ru.tinkoff.edu.java.parser;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.*;
 
 class GitHubParserTest {
 
     @Test
-    void regTest() {
+    void simpleRegExTests() {
+        String[] git = {"sanyarnd", "tinkoff-java-course-2022"};
+        String[] sof = {"1642028"};
         StackOverFlowParser stackOverFlowParser = new StackOverFlowParser(null);
         GitHubParser gitHubParser = new GitHubParser(stackOverFlowParser);
-        String[] result = gitHubParser.doParse("https://github.com/sanyarnd/tinkoff-java-course-2022");
-        System.out.println(result != null ? Arrays.stream(result).toList() : "null");
-        result = gitHubParser.doParse("https://github.com/sanyarnd/tinkoff-java-course-2022/");
-        System.out.println(result != null ? Arrays.stream(result).toList() : "null");
-        result = gitHubParser.doParse("https://stackoverflow.com/questions/1642028/what-is-the-operator-in-c");
-        System.out.println(result != null ? Arrays.stream(result).toList() : "null");
-        result = gitHubParser.doParse("https://stackoverflow.com/questions/1642028");
-        System.out.println(result != null ? Arrays.stream(result).toList() : "null");
-        result = gitHubParser.doParse("https://stackoverflow.com/questions/1642028/");
-        System.out.println(result != null ? Arrays.stream(result).toList() : "null");
-        result = gitHubParser.doParse("https://stackoverflow.com/search?q=unsupported%20link");
-        System.out.println(result != null ? Arrays.stream(result).toList() : "null");
+        assertArrayEquals(git, gitHubParser.doParse("https://github.com/sanyarnd/tinkoff-java-course-2022"));
+        assertArrayEquals(git, gitHubParser.doParse("https://github.com/sanyarnd/tinkoff-java-course-2022/"));
+        assertArrayEquals(git, gitHubParser.doParse("http://github.com/sanyarnd/tinkoff-java-course-2022"));
+        assertArrayEquals(git, gitHubParser.doParse("http://github.com/sanyarnd/tinkoff-java-course-2022/"));
+        assertArrayEquals(sof, gitHubParser.doParse("https://stackoverflow.com/questions/1642028/what-is-the-operator-in-c"));
+        assertArrayEquals(sof, gitHubParser.doParse("https://stackoverflow.com/questions/1642028/what-is-the-operator-in-c/"));
+        assertArrayEquals(sof, gitHubParser.doParse("https://stackoverflow.com/questions/1642028"));
+        assertArrayEquals(sof, gitHubParser.doParse("https://stackoverflow.com/questions/1642028/"));
+        assertArrayEquals(sof, gitHubParser.doParse("http://stackoverflow.com/questions/1642028/what-is-the-operator-in-c"));
+        assertArrayEquals(sof, gitHubParser.doParse("http://stackoverflow.com/questions/1642028/what-is-the-operator-in-c/"));
+        assertArrayEquals(sof, gitHubParser.doParse("http://stackoverflow.com/questions/1642028"));
+        assertArrayEquals(sof, gitHubParser.doParse("http://stackoverflow.com/questions/1642028/"));
+        assertNull(gitHubParser.doParse("https://stackoverflow.com/search?q=unsupported%20link"));
     }
 }

@@ -2,7 +2,7 @@ package ru.tinkoff.edu.java.parser;
 
 public abstract class Parser {
 
-    protected Parser next;
+    private final Parser next;
 
     public Parser(Parser next) {
         this.next = next;
@@ -11,6 +11,6 @@ public abstract class Parser {
     public abstract String[] doParse(String URL);
 
     public Parser getNext() {
-        return this.next;
+        return next;
     }
 }
