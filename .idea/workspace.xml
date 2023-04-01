@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d6c3a5d-3098-4736-948d-73c768d52df3" name="Changes" comment="updating pom-files">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/src/main/java/ru/tinkoff/edu/java/bot/BotApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/src/main/java/ru/tinkoff/edu/java/bot/configuration/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapper/src/main/java/ru/tinkoff/edu/java/scrapper/ScrapperApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapper/src/main/java/ru/tinkoff/edu/java/scrapper/configuration/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapper/src/main/resources/application.yaml" afterDir="false" />
+    <list default="true" id="9d6c3a5d-3098-4736-948d-73c768d52df3" name="Changes" comment="the first task is done">
+      <change afterPath="$PROJECT_DIR$/link-parser/src/main/java/ru/tinkoff/edu/java/parser/GitHubParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/link-parser/src/main/java/ru/tinkoff/edu/java/parser/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/link-parser/src/main/java/ru/tinkoff/edu/java/parser/StackOverFlowParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/link-parser/src/main/java/ru/tinkoff/edu/java/parser/exceptions/UnsupportedLink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/link-parser/src/test/java/ru/tinkoff/edu/java/parser/GitHubParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/link-parser/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/link-parser/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -52,6 +51,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "last_opened_file_path": "C:/Users/Anvolo/repos/tinkoff_java_hw/scrapper/src/main/resources",
     "project.structure.last.edited": "Modules",
@@ -65,13 +66,20 @@
       <recent name="C:\Users\Anvolo\repos\tinkoff_java_hw\scrapper\src\main\resources" />
       <recent name="C:\Users\Anvolo\repos\tinkoff_java_hw\bot\src\main\java" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.tinkoff.edu.java.parser" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn compile" />
+      <command value="mvn package" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.ScrapperApplication">
+  <component name="RunManager" selected="JUnit.GitHubParserTest">
     <configuration name="BotApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.tinkoff.edu.java.bot.BotApplication" />
       <module name="bot" />
@@ -98,8 +106,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GitHubParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="link-parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.tinkoff.edu.java.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.tinkoff.edu.java.parser" />
+      <option name="MAIN_CLASS_NAME" value="ru.tinkoff.edu.java.parser.GitHubParserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GitHubParserTest.regTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="link-parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.tinkoff.edu.java.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.tinkoff.edu.java.parser" />
+      <option name="MAIN_CLASS_NAME" value="ru.tinkoff.edu.java.parser.GitHubParserTest" />
+      <option name="METHOD_NAME" value="regTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GitHubParserTest" />
+        <item itemvalue="JUnit.GitHubParserTest.regTest" />
         <item itemvalue="Application.ScrapperApplication" />
         <item itemvalue="Application.BotApplication" />
       </list>
@@ -128,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680333445320</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="the first task is done">
+      <created>1680336218312</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680336218312</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +193,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="making modules, creating empty pom-files" />
     <MESSAGE value="updating pom-files" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating pom-files" />
+    <MESSAGE value="the first task is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="the first task is done" />
   </component>
 </project>
